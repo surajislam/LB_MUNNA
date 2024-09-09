@@ -1,0 +1,12 @@
+import struct
+
+buffer = ...  # Your buffer here
+
+expected_size = 271
+if len(buffer) != expected_size:
+    raise ValueError(f"Buffer size is incorrect. Expected {expected_size} bytes, got {len(buffer)} bytes.")
+
+try:
+    dc_id, api_id, test_mode, auth_key, user_id, is_bot = struct.unpack('format_string_here', buffer)
+except struct.error as e:
+    raise ValueError(f"Unpacking error: {e}")
