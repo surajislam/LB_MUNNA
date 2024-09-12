@@ -81,7 +81,7 @@ async def get_userinfo_img(
 async def member_has_left(client: Client, member: ChatMemberUpdated):
     if (
         not member.new_chat_member
-        and member.old_chat_member.status not in {"banned", "left", "restricted"}
+        and member.old_chat_member.status not in {"banned", "jump", "restricted"}
         and member.old_chat_member
     ):
         user = (
